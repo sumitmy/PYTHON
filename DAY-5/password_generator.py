@@ -8,22 +8,22 @@ numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '*', '+']
 
 print("Welcome to the PyPassword Generator!")
-# take input as letter
-nr_letters = int(input("How many letters would you like in your password\n"))
 # take input as number
-nr_number = int(input("How many number would you like in your password\n"))
+nr_number = int(input("How many 'number' would you like in your password\n"))
+# take input as letter
+nr_letters = int(input("How many 'letters' would you like in your password\n"))
 # take input as symbol
-nr_symbol = int(input("How many symbol would you like in your password\n"))
+nr_symbol = int(input("How many 'symbol' would you like in your password\n"))
 
 password_list = []
 # for random number using in password
-for char in range(1, nr_number + 1):
+for char in range(0, nr_number):
     password_list += random.choice(numbers)
 # for random letter using in password
-for char in range(1, nr_letters + 1):
+for char in range(0, nr_letters):
     password_list += random.choice(letters)
 # for random symbol using in password
-for char in range(1, nr_symbol + 1):
+for char in range(0, nr_symbol):
     password_list += random.choice(symbols)
 # shuffle is a keyword that print lists elements randomly
 random.shuffle(password_list)
@@ -33,4 +33,4 @@ password = ""
 # that is look like a normal password
 for char in password_list:
     password += char
-print(password)
+print(f"your password is {password}")
